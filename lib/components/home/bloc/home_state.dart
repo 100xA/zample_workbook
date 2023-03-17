@@ -6,5 +6,5 @@ class HomeState extends Equatable {
   const HomeState({this.index = 2});
 
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [index];
 }

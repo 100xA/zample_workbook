@@ -1,21 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zample/components/profile/firebase_profile_repository.dart';
-import 'package:zample/core/bloc/repo/firebase_auth_repository.dart';
 
 import '../../../components/profile/profile.dart';
-import '../../services/navigator_service.dart';
 import '../../services/service_locator.dart';
 
 class AuthCubit extends Cubit<dynamic> {
   /// link to a specific default image for the [avatarUrl]
   static const lightBulbImageUrl =
       'https://firebasestorage.googleapis.com/v0/b/zample-95803.appspot.com/o/ressources%2Fexternal-content.duckduckgo.com.png?alt=media&token=c4048d1a-4d3a-471f-96eb-03b9d3c1a6a1';
-
-  final FirebaseAuthRepository firebaseAuthRepository =
-      app.get<FirebaseAuthRepository>();
-
-  final NavigatorService navigatorService = app.get<NavigatorService>();
 
   AuthCubit() : super("");
 

@@ -25,7 +25,7 @@ class SocialLinksCubit extends Cubit<SocialLinksState> {
     try {
       final credentials = await firebaseAuthRepository.loginWithGoogle();
       await _authCubit.initialize();
-      emit(state.copyWith(loading: false));
+      emit(state.copyWith(loading: false, authenticated: true));
     } on FirebaseAuthException catch (e) {
       switch (e.code) {
         /// singular case: the accounts exists with different credentials
@@ -53,7 +53,7 @@ class SocialLinksCubit extends Cubit<SocialLinksState> {
 
   Future<void> signOut() async {
     await firebaseAuthRepository.signOut();
-    emit(state.copyWith(authenticated: false));
+    emit(state.copyWith(authenticated: false, loading: false));
     _navigatorService.pushReplacementNamed(LandingScreen.route);
   }
 }

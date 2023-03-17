@@ -14,9 +14,9 @@ class GlobalBlocProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(providers: [
-      BlocProvider<AppCubit>.value(
+      /* BlocProvider<AppCubit>.value(
         value: app.get<AppCubit>()..initializeApp(),
-      ),
+      ), */
       BlocProvider<AuthCubit>.value(
         value: app.get<AuthCubit>(),
       ),

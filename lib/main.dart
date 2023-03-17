@@ -21,11 +21,6 @@ void main() async {
   /// Initialize [Firebase]
   await Firebase.initializeApp();
 
-  SystemChrome.setPreferredOrientations([
-    DeviceOrientation.portraitUp,
-    DeviceOrientation.portraitDown,
-  ]);
-
   /// Initialize [GlobalBlocProvider] with [MutliBlocProvider] with necessary [Blocs]
   runApp(const GlobalBlocProvider(
     child: Zample(),

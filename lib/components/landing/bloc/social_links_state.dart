@@ -14,7 +14,7 @@ class SocialLinksState extends Equatable {
   const SocialLinksState({
     this.error = "",
     this.loading = false,
-    this.authenticated = true,
+    this.authenticated = false,
   });
 
   SocialLinksState copyWith(

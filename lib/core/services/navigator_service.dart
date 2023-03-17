@@ -77,10 +77,10 @@ class NavigatorService {
         screen = const LandingScreen();
         break;
       case HomeScreen.route:
-        screen = const HomeScreen();
+        screen = HomeScreen();
         break;
       default:
-        screen = const HomeScreen();
+        screen = HomeScreen();
         break;
     }
 

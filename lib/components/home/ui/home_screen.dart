@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zample/components/home/bloc/home_cubit.dart';
 import 'package:zample/components/landing/bloc/social_links_cubit.dart';
 import 'package:zample/components/landing/bloc/social_links_state.dart';
+import 'package:zample/core/bloc/repo/firebase_auth_repository.dart';
 import 'package:zample/misc/theme/colors.dart';
 
 import '../../../core/services/service_locator.dart';
@@ -21,14 +22,14 @@ class HomeScreen extends StatelessWidget {
               backgroundColor: darkGreyColor,
               body: Center(
                   child: InkWell(
-                child: _textWidget(socialLinksCubit.state, context),
+                child: _textWidget(context),
                 onTap: () => socialLinksCubit.signOut(),
               )),
             ));
   }
 
-  Widget _textWidget(SocialLinksState state, BuildContext context) {
-    if (state.authenticated == true) {
+  Widget _textWidget(BuildContext context) {
+    if (app.get<FirebaseAuthRepository>().getCurrentUser() != null) {
       return Text(
         "Logout",
         style: Theme.of(context).textTheme.headlineMedium,
