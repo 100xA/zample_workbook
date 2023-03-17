@@ -1177,10 +1177,29 @@ class SocialLinks extends StatelessWidget {
 ```
 Here you can see that I have used the SocialLinksState to manipulate a Scaffoldmessenger that appears with the error Message if the Authentication Process fails.
 
-Along with that you can see the Container with two SignIn Options connected to the SocialLinksCubit. Since we already have the SocialLinksCubit as the "context" we can just read from it and call the necessary methods.
+
+Along with that you can see the Container with two SignIn options connected to the SocialLinksCubit. Since we already have the SocialLinksCubit as the "context" we can just read from it and call the necessary methods.
+
+The ImageAsset can be found under [here](https://developers.google.com/identity/branding-guidelines).
 
 
 With that out of the way we are done with everything necessary to run the project. In the last step I will show you how to organize the project so its ready for the upcoming parts of the project.
 
 
 ## Final Setup
+
+![Project Structure](/assets/screenshots/project-structure-big.png)
+If you have followed the tutorial, you should have a similar amount of files in your project. Regarding structuring I always like to work with three main folders:
+
+- components:  main components of the application, divided into each functional part of the application, where every part has a own UI/BL/Repository for its service
+
+- core: overarching features of the application (authentication, logging etc.)
+
+- misc: miscellanous features (routing, themes/color schemes) of the application
+
+Each component has a bloc, UI and Repo component. If you want to work with a different structure, thats totally fine! For this Tutorial Series I will use my own structure and add necessary components in the next parts.
+
+
+# Conclusion
+
+You are officially done with Part 1 - Congrats to you!
