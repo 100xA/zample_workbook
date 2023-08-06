@@ -1202,4 +1202,4 @@ Each component has a bloc, UI and Repo component. If you want to work with a dif
 
 # Conclusion
 
-You are officially done with Part 1 - Congrats to you!
+You are officially done with Part 1 - Congrats to you.
